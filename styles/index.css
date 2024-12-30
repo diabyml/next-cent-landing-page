@@ -305,7 +305,8 @@ h3, h4 {
 /* A elements that don't have a class get default styles */
 a:not([class]) {
   text-decoration-skip-ink: auto;
-  color: currentColor;
+  color: var(--color-primary);
+  text-decoration: none;
 }
 
 /* a[class] {
@@ -619,6 +620,89 @@ BLOCKS
 .btn:active {
     transform: scale(.99);
 }
+
+.btn[data-button-variant="primary"] {
+    --button-bg:var(--color-primary);
+    --button-color: var(--color-silver);
+    --button-hover-bg: var(--color-primary);
+    --button-hover-color:var(--color-white);
+    --button-border-color: var(--color-primary);
+}
+
+.btn[data-button-variant="ghost"] {
+    --button-bg:transparent;
+    --button-color: currentColor;
+    --button-hover-bg: var(--color-dgrey);
+    --button-hover-color: var(--color-silver);
+    --button-border-color: var(--color-grey);
+}
+
+.btn[data-button-variant="link"] {
+    --button-bg:transparent;
+    --button-color: var(--color-primary);
+    --button-hover-bg: transparent;
+    --button-hover-color: var(--color-primary);
+    --button-border-color: transparent;
+
+    /* specific to current project */
+    padding: 0;
+}
+
+.btn[data-button-size="small"] {
+    --button-padding: .5em 1em;
+    --button-font-size: .8em;
+    --button-outline-offset: 2px;
+}
+
+
+/* other variants, change only properties that change */
+
+.btn[data-button-radius="hard"] {
+    border-radius: 0;
+}
+
+.input {
+
+    /* Configuration */
+    --input-padding: .5em 1em;
+    --input-gap: .5em;
+    --input-bg: var(--color-silver);
+    --input-color: var(--color-black);
+    --input-border-width: 3px;
+    --input-border-style: solid;
+    --input-border-color: var(--input-bg);
+    --input-radius: 5px;
+
+    /* Layout & Space */
+    display: inline-flex;
+    align-items: center;
+    gap: var(--input-gap);
+    padding: var(--input-padding);
+
+    /* Colors */
+    background: var(--input-bg);
+    color: var(--input-color);
+
+    /* Stroke & Radius */
+    border-width: var(--input-border-width);
+    border-style: var(--input-border-style);
+    border-color: var(--input-border-color);
+    border-radius: var(--input-radius);
+
+    /* Typography */
+    font-family: var(--font-inter);
+    font-weight: var(--weight-400);
+    font-size: var(--input-font-size,1em);
+    line-height: 1;
+}
+
+.input:focus {
+    outline-width: var(--input-outline-width,var(--input-border-width));
+    outline-style: var(--input-outline-style,var(--input-border-style));
+    outline-color: var(--input-outline-color,var(--input-border-color));
+    outline-offset var(--input-outline-offet,calc(var(--input-border-width)*2)) ;
+}
+
 
 /* NAVIGATION */
 
