@@ -725,7 +725,9 @@ BLOCKS
 }
 
 .site-navigation-mobile {
-    height: 0;
+    /* outline: 1px solid red; */
+    height: 0px;
+    visibility: hidden;
     overflow: hidden;
     transition: height .3s ease-in-out;
     interpolate-size: allow-keywords;
@@ -735,6 +737,7 @@ BLOCKS
 
 .navigation-active {
     height: auto;
+    visibility: visible;
 }
 
 .site-navigation-desktop {
