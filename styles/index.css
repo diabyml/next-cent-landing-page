@@ -746,6 +746,7 @@ BLOCKS
     flex-wrap: wrap;
     align-items: center;
     gap: var(--size-400);
+    overflow-x: auto;
  }
 
  .site-navigation-desktop ul {
